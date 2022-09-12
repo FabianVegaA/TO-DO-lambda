@@ -1,0 +1,181 @@
+body {
+  background: #4c3575;
+}
+
+.container {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 23px 15px;
+  gap: 28px;
+  isolation: isolate;
+
+  position: absolute;
+  width: 1126px;
+  left: 193px;
+  top: 91px;
+
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.title {
+  width: 293px;
+  height: 106px;
+
+  /* Título */
+  font-family: "Prompt";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 106px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #371b58;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.add-task {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 594px;
+  height: 61.13px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+#input {
+  width: 530px;
+  height: 54px;
+
+  background: rgba(102, 0, 248, 0.08);
+  border: 2px solid #371b58;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  font-size: 20px;
+
+  padding-left: 10px;
+}
+
+.add {
+  width: 64px;
+  height: 61.13px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.add,
+.add:focus {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.add:active {
+  outline: none;
+  background: transparent;
+  border: 1px solid grey;
+}
+
+#clear-all {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 27px;
+  gap: 10px;
+
+  width: 184px;
+  height: 67px;
+  left: 878px;
+  top: 646px;
+
+  background: rgba(76, 53, 117, 0.82);
+  border-radius: 7px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+  z-index: 3;
+
+  font-family: "Jua";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+
+  color: #ffffff;
+}
+
+#tasks {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
+  gap: 23px;
+
+  width: 703px;
+  height: 385px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+#task {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #8968b9;
+  border-radius: 17.5px;
+}
+
+#task > h5 {
+  position: absolute;
+  width: 450px;
+  height: 37px;
+  left: 32px;
+  top: 24px;
+
+  font-family: "Jua";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+
+  color: #ffffff;
+}
