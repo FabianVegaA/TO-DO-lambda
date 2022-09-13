@@ -43,6 +43,11 @@
             case "clear-all":
               document.getElementById("tasks").innerHTML = "";
               break;
+            case "task-removed":
+              document.getElementById("tasks").innerHTML = document
+                .getElementById("tasks")
+                .innerHTML.replace(msg.value, ""); // FIXME: this is not a good way to remove a task
+              break;
             default:
               console.log("Unknown message: " + event.data);
           }
