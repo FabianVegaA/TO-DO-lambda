@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Jua";
+  src: url("fonts/Jua-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: #4c3575;
 }
@@ -112,7 +119,7 @@ body {
   gap: 10px;
 
   width: 184px;
-  height: 67px;
+  height: 85px;
   left: 878px;
   top: 646px;
 
@@ -164,7 +171,7 @@ body {
   border-radius: 17.5px;
 }
 
-#task > h5 {
+#title-task {
   position: absolute;
   width: 450px;
   height: 37px;
@@ -178,4 +185,17 @@ body {
   line-height: 45px;
 
   color: #ffffff;
+}
+
+#remove-task,
+#remove-task:focus {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+#remove-task:active {
+  outline: none;
+  background: transparent;
+  border: 1px transparent grey;
 }
