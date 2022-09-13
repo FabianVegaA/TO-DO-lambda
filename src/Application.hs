@@ -55,16 +55,26 @@ talk client@(_, conn) _ = forever $ do
     Nothing -> sendEncodeEvent client $ Event "warning" "Invalid message"
     Just event' -> case type_ event' of
       "add-task" -> addTask client event'
-      "clear-all" -> sendEncodeEvent client $ Event "clear-all" "Cleaning all tasks"
+      "remove-task" -> removeTask client event'
+      "clear-all" -> clearAllTasks client
       "random" -> do
         n <- randomRIO (1, 100) :: IO Int
         sendEncodeEvent client $ Event "random" (T.pack $ show n)
       _ -> sendEncodeEvent client $ Event "warning" "Invalid message"
 
+removeTask :: Client -> Event -> IO ()
+removeTask client event = do
+  -- FIXME: Remove task of the DB
+  sendEncodeEvent client $ Event "task-removed" (value event)
+
 addTask :: Client -> Event -> IO ()
-addTask client event =
+addTask client event = do
   let task = value event
-   in sendEncodeEvent client $ Event "task-added" $ toStrict . renderHtml $ makeTask task
+  -- FIXME: Add task to the DB
+  sendEncodeEvent client $ Event "task-added" $ toStrict . renderHtml $ makeTask task
+
+clearAllTasks :: Client -> IO ()
+clearAllTasks client = sendEncodeEvent client $ Event "clear-all" "Cleaning all tasks"
 
 sendEncodeEvent :: Client -> Event -> IO ()
 sendEncodeEvent (_, conn) = WS.sendTextData conn . encode
