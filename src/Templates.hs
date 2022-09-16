@@ -9,11 +9,11 @@ import Prelude hiding (div, id)
 
 makeTask :: Text -> Html
 makeTask task = div $ do
-  div ! id "task" $ mempty
   div ! id "task" $ do
     h5 ! id "title-task" $ toHtml task
-  button ! id "remove-task" $ do
-    iframe ! src "icons/trash.svg" ! id "trash" $ mempty
+    div ! id "task" $ do
+      button ! id "remove-task" $ do
+        iframe ! src "icons/trash.svg" ! id "trash" $ mempty
 
 makeTaskList :: [Text] -> Html
 makeTaskList tasks =
