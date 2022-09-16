@@ -20,3 +20,4 @@ main = do
 
   state <- newMVar newServerState
   runServer "127.0.0.1" 8000 $ application state
+ 
