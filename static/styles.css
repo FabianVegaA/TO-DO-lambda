@@ -1,6 +1,23 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #4c3575;
+    --secondary-color: #5b4b8a;
+    --background-color: #371b58;
+    --light-color: #7858a6;
+    --text-color: #f9f5eb;
+  }
+}
+
 @font-face {
   font-family: "Jua";
   src: url("fonts/Jua-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Prompt";
+  src: url("fonts/Prompt-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -18,10 +35,12 @@ body {
   gap: 28px;
   isolation: isolate;
 
-  position: absolute;
-  width: 1126px;
-  left: 193px;
-  top: 91px;
+  width: 70%;
+
+  margin: auto;
+
+  margin-bottom: 100px;
+  margin-top: 100px;
 
   background: #ffffff;
   border-radius: 20px;
@@ -39,6 +58,9 @@ body {
   line-height: 106px;
   /* identical to box height */
   text-align: center;
+
+  margin-top: 20px;
+  margin-bottom: 0;
 
   color: #371b58;
 
@@ -151,7 +173,6 @@ body {
   gap: 23px;
 
   width: 703px;
-  height: 385px;
 
   /* Inside auto layout */
   flex: none;
@@ -161,41 +182,64 @@ body {
 }
 
 #task {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  width: 603px;
+  height: 113px;
 
   background: #8968b9;
   border-radius: 17.5px;
 }
 
-#title-task {
+#task > * {
   position: absolute;
-  width: 450px;
-  height: 37px;
-  left: 32px;
-  top: 24px;
+}
 
+#title-task {
   font-family: "Jua";
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
   line-height: 45px;
-
+  z-index: 1;
   color: #ffffff;
+}
+
+#remove-task {
+  right: 10px;
+}
+
+#trash {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
 }
 
 #remove-task,
 #remove-task:focus {
   outline: none;
   background: transparent;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
 }
 
 #remove-task:active {
   outline: none;
   background: transparent;
-  border: 1px transparent grey;
+  border: 0px solid transparent;
+}
+
+footer {
+  position: fixed;
+  margin-left: -8px;
+  width: 100%;
+
+  bottom: 0;
+
+  text-align: center;
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  font-family: "Jua";
 }
