@@ -1,4 +1,4 @@
-# HtmlOverWsHs
+# TO-DO Lambda
 
 This is a simple implementation of a TODO web application using WebSockets and Haskell.
 
